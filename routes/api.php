@@ -19,5 +19,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('student', [StudentController::class, 'index']);
+Route::get('student', [StudentController::class, 'index']); //see all data
+
+Route::post('student', [StudentController::class, 'upload']); //add data
+
+Route::put('student/edit/{id}', [StudentController::class, 'edit']); //edit data
+
+Route::delete('student/edit/{id}', [StudentController::class, 'destroy']); //delete data
 
